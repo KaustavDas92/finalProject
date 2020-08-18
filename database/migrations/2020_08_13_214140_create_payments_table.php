@@ -15,6 +15,8 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->json('product_ids');
+            $table->json('quantities');
             $table->float('total');
             $table->text('payment_type');
             $table->string('status')->default('active');

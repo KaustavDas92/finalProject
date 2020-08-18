@@ -1,7 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e53611b-7921-4a8f-a64d-9719870ec2b4" name="Default Changelist" comment="" />
+    <list default="true" id="7e53611b-7921-4a8f-a64d-9719870ec2b4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Cart.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Checkout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ConfirmationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Order.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_08_15_171450_create_carts_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_08_17_175458_create_orders_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/custom.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1597663573.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1597663595.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1597663626.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1597668550.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1597670095.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1597670159.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1597744017.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1597744038.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1597744057.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/website/frontend/customer_details/customerDetails_new.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/website/frontend/orders.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/website/frontend/product/cart.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/website/frontend/product/checkout.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/website/frontend/product/update_cart.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/website/frontend/thankYou.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/CustomerDetail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/CustomerDetail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomerDetailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerDetailController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_11_224545_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_11_224545_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_11_224722_create_product_images_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_11_224722_create_product_images_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_13_210258_create_customer_details_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_13_210258_create_customer_details_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_13_214140_create_payments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_13_214140_create_payments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/backend/customerdetail/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/backend/customerdetail/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/backend/product/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/backend/product/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/backend/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/backend/product/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/frontend/layouts/foot.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/frontend/layouts/foot.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/frontend/layouts/head.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/frontend/layouts/head.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/frontend/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/frontend/layouts/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/frontend/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/frontend/layouts/main.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/frontend/product/layouts/foot.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/frontend/product/layouts/footer.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/frontend/product/layouts/head.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/frontend/product/layouts/header.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/frontend/product/product_details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/frontend/product/product_details.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +86,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -121,15 +204,18 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1fmskNXSMNsjbcfAO4KfMWL7sfB" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/website/backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -140,12 +226,14 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\finalProject\resources\views\website\frontend\customer_details" />
       <recent name="C:\Users\User\finalProject\resources\views\website\frontend\product\layouts" />
       <recent name="C:\Users\User\finalProject\resources\views\website\frontend\product" />
       <recent name="C:\Users\User\finalProject\resources\views\website\frontend\layouts" />
       <recent name="C:\Users\User\finalProject\resources\views" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\finalProject\public\css" />
       <recent name="C:\Users\User\finalProject\resources\views\website\backend" />
     </key>
   </component>
@@ -171,17 +259,47 @@
       <workItem from="1597394758514" duration="14849000" />
       <workItem from="1597443063007" duration="3587000" />
       <workItem from="1597481896776" duration="14312000" />
+      <workItem from="1597568328781" duration="37964000" />
+      <workItem from="1597654428312" duration="38142000" />
+      <workItem from="1597738737304" duration="12914000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="452" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597494675412">
+    <state x="452" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597665041142">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="452" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1597494675412" />
+    <state x="452" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1597665041142" />
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1597176280286">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -198,10 +316,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1597158375221" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1597178664279">
+    <state x="339" y="162" key="run.anything.popup" timestamp="1597607167057">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1597178664279" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1597607167057" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1597412214422">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
 use App\CustomerDetail;
-use App\User;
-use Cassandra\Custom;
 use Illuminate\Http\Request;
 
-class CustomerDetailController extends Controller
+class CheckoutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,16 @@ class CustomerDetailController extends Controller
      */
     public function index()
     {
-        $customerDetails=CustomerDetail::all();
-        return view('website.backend.customerdetail.index',['customerDetails'=>$customerDetails]);
+        $customer=CustomerDetail::where('user_id',auth()->user()->id)->exists();
+        if($customer==null)
+            return view('website.frontend.customer_details.customerDetails_new');
+        else
+        {
+            $cus=CustomerDetail::where('user_id',auth()->user()->id)->first();
+            return redirect(route('checkout.show',$cus->id));
+        }
+
+
     }
 
     /**
@@ -27,8 +34,7 @@ class CustomerDetailController extends Controller
      */
     public function create()
     {
-        $users=User::all();
-        return view ('website.backend.customerdetail.create',['users'=>$users]);
+        //
     }
 
     /**
@@ -39,58 +45,64 @@ class CustomerDetailController extends Controller
      */
     public function store(Request $request)
     {
+
         CustomerDetail::create($request->all());
-        return redirect(route('customerdetail.index'));
+        return redirect(route('checkout.index'));
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\CustomerDetail  $customerDetail
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(CustomerDetail $customerDetail)
+    public function show($id)
     {
-        //
+        $customer=CustomerDetail::find($id);
+        //$cart=auth()->user()->carts->flatten()->pluck('product_id');
+        $carts=auth()->user()->carts;
+
+        $subTotal=0.0;
+        foreach ($carts as $cart)
+        {
+            $subTotal+=$cart->total;
+        }
+
+        return view('website.frontend.product.checkout',['customer'=>$customer,'carts'=>$carts,'subTotal'=>$subTotal]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\CustomerDetail  $customerDetail
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id )
+    public function edit($id)
     {
-        $customerDetail=CustomerDetail::find($id);
-        return view ('website.backend.customerdetail.edit',['customerDetail'=>$customerDetail]);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\CustomerDetail  $customerDetail
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $customerDetail=CustomerDetail::find($id);
-        $customerDetail->update($request->all());
-
-        return redirect(route('customerdetail.index'));
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\CustomerDetail  $customerDetail
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $customerDetail=CustomerDetail::find($id);
-        $customerDetail->delete();
-        return back();
+        //
     }
 }

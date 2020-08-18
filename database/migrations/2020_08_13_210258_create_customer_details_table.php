@@ -15,6 +15,7 @@ class CreateCustomerDetailsTable extends Migration
     {
         Schema::create('customer_details', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
             $table->string('fname');
             $table->string('lname');
             $table->string('company_name')->nullable();
@@ -28,6 +29,11 @@ class CreateCustomerDetailsTable extends Migration
             $table->integer('pincode');
             $table->text('other_notes');
             $table->timestamps();
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->cascadeOnDelete();
         });
     }
 

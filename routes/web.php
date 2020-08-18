@@ -26,7 +26,14 @@ Route::get('/dashboard', 'BackendController@index')->name('backend.index');
 //   return view('website.frontend.product.product_details');
 //});
 Route::resource('/home','FrontendController');
-
+Route::get('/cart','CartController@index')->name('cart.index');
+Route::put('/cart/{cart}','CartController@update')->name('cart.update');
+Route::delete('/cart/{cart}','CartController@destroy')->name('cart.destroy');
+Route::post('/cart','CartController@store')->name('cart.store');
+//Route::resource('/cart', 'CartController');
+Route::resource('/orders','OrdersController');
+Route::resource('/confirmation','ConfirmationController');
+Route::resource('/cart/checkout','checkoutController');
 Route::resource('/dashboard/productcategory','ProductCategoryController');
 Route::resource('/dashboard/product','ProductController');
 Route::resource('/dashboard/productimage','ProductImageController');

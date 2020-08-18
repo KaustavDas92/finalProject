@@ -81,6 +81,7 @@
                                                 <th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" style="width: 65px;" aria-label="Last name: activate to sort column ascending">Product Name</th>
                                                 <th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" style="width: 65px;" aria-label="Last name: activate to sort column ascending">Price</th>
                                                 <th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" style="width: 65px;" aria-label="Last name: activate to sort column ascending">Description</th>
+                                                <th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" style="width: 65px;" aria-label="Last name: activate to sort column ascending">Gender</th>
                                                 <th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" style="width: 65px;" aria-label="Last name: activate to sort column ascending">Status</th>
                                                 <th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" style="width: 65px;" aria-label="Last name: activate to sort column ascending">Action</th>
                                             </tr>
@@ -93,6 +94,7 @@
                                                     <td>{{$product->name}}</td>
                                                     <td>{{$product->price}}</td>
                                                     <td>{{$product->description}}</td>
+                                                    <td>{{$product->gender}}</td>
                                                     <td>{{$product->status}}</td>
                                                     <td class>
                                                         <a class="btn btn-app"

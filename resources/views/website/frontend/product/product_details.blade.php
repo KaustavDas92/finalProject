@@ -1,12 +1,14 @@
 <!doctype html>
 <html lang="zxx">
 
-@include('website.frontend.product.layouts.head')
+{{--@include('website.frontend.product.layouts.head')--}}
+@include('website.frontend.layouts.head')
 
 
 <body>
 
-@include('website.frontend.product.layouts.header')
+{{--@include('website.frontend.product.layouts.header')--}}
+@include('website.frontend.layouts.header')
 <main>
     <!-- Hero Area Start-->
     <div class="slider-area ">
@@ -49,20 +51,24 @@
                         <h3>{{$product->name}}</h3>
                         <p>
                             {{$product->description}}                        </p>
-                        <div class="card_area">
-                            <div class="product_count_area">
-                                <p>Quantity</p>
-                                <div class="product_count d-inline-block">
-                                    <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
-                                    <input class="product_count_item input-number" type="text" value="1" min="0" max="10">
-                                    <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
+                        <form method="POST" action="{{route('cart.store',['product'=>$product->id])}}">
+                            @csrf
+                            <div class="card_area">
+                                <div class="product_count_area">
+                                    <p>Quantity</p>
+                                    <div class="product_count d-inline-block">
+                                        <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
+                                        <input class="product_count_item input-number" name="quantity" id="quantity" type="number" value="1" min="0" max="10">
+                                        <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
+                                    </div>
+                                    <p>{{$product->price}}</p>
                                 </div>
-                                <p>{{$product->price}}</p>
+                                <div class="add_to_cart">
+                                    <button  type="submit" class="btn_3">add to cart</button>
+                                </div>
                             </div>
-                            <div class="add_to_cart">
-                                <a href="#" class="btn_3">add to cart</a>
-                            </div>
-                        </div>
+                        </form>
+
                     </div>
                 </div>
             </div>
@@ -88,7 +94,8 @@
     </section>
     <!-- subscribe part end -->
 </main>
-@include('website.frontend.product.layouts.footer')
+{{--@include('website.frontend.product.layouts.footer')--}}
+@include('website.frontend.layouts.footer')
 <!--? Search model Begin -->
 <div class="search-model-box">
     <div class="h-100 d-flex align-items-center justify-content-center">
@@ -100,7 +107,8 @@
 </div>
 <!-- Search model end -->
 
-@include('website.frontend.product.layouts.foot')
+{{--@include('website.frontend.product.layouts.foot')--}}
+@include('website.frontend.layouts.foot')
 
 </body>
 

@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\CustomerDetail;
-use App\User;
-use Cassandra\Custom;
 use Illuminate\Http\Request;
 
-class CustomerDetailController extends Controller
+class OrdersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +13,7 @@ class CustomerDetailController extends Controller
      */
     public function index()
     {
-        $customerDetails=CustomerDetail::all();
-        return view('website.backend.customerdetail.index',['customerDetails'=>$customerDetails]);
+        //
     }
 
     /**
@@ -27,8 +23,7 @@ class CustomerDetailController extends Controller
      */
     public function create()
     {
-        $users=User::all();
-        return view ('website.backend.customerdetail.create',['users'=>$users]);
+        //
     }
 
     /**
@@ -39,58 +34,51 @@ class CustomerDetailController extends Controller
      */
     public function store(Request $request)
     {
-        CustomerDetail::create($request->all());
-        return redirect(route('customerdetail.index'));
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\CustomerDetail  $customerDetail
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(CustomerDetail $customerDetail)
+    public function show($id)
     {
-        //
+        return view('website.frontend.orders');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\CustomerDetail  $customerDetail
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id )
+    public function edit($id)
     {
-        $customerDetail=CustomerDetail::find($id);
-        return view ('website.backend.customerdetail.edit',['customerDetail'=>$customerDetail]);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\CustomerDetail  $customerDetail
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $customerDetail=CustomerDetail::find($id);
-        $customerDetail->update($request->all());
-
-        return redirect(route('customerdetail.index'));
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\CustomerDetail  $customerDetail
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $customerDetail=CustomerDetail::find($id);
-        $customerDetail->delete();
-        return back();
+        //
     }
 }

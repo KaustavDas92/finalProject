@@ -43,6 +43,20 @@
 {{--                            <input type="text" id="productCategory_name" name="productCategory_name"required="required" class="form-control ">--}}
                         </div>
                     </div>
+
+                                        <div class="item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3 label-align">Gender</label>
+                                            <div class="col-md-6 col-sm-6 ">
+                                                <div id="gender" class="btn-group" data-toggle="buttons">
+                                                    <label class="btn btn-secondary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                                                        <input type="radio" name="gender" value="male" class="join-btn" data-parsley-multiple="gender"> &nbsp; Male &nbsp;
+                                                    </label>
+                                                    <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                                                        <input type="radio" name="gender" value="female" class="join-btn" data-parsley-multiple="gender"> Female
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
                     <div class="item form-group">
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Product Name <span class="required">*</span>
                         </label>

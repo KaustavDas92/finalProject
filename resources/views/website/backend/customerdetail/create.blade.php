@@ -29,6 +29,18 @@
                     @csrf
 
                     <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="fname">All Users <span class="required">*</span>
+                        </label>
+                        <select class="form-control" name="user_id" required="required">
+                            <option value="none" selected disabled hidden>
+                                Select a User
+                            </option>
+                            @foreach($users as $user)
+                                <option  value="{{$user->id}}" name="user_id">{{$user->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="item form-group">
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="fname">First Name <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">

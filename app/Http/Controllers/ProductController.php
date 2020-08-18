@@ -44,6 +44,7 @@ class ProductController extends Controller
             'product_category_id'=>$request->prodId,
             'name'=>$request->name,
             'price'=>$request->price,
+            'gender'=>$request->gender,
             'description'=>$request->description,
             'slug'=>$slug,
         ]);

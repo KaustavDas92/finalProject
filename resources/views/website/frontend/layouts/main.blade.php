@@ -169,6 +169,7 @@
                     <div class="single-popular-items mb-50 text-center">
                         <div class="popular-img">
                             <img src="{{asset('images/'.$product->images[0]->image)}}" alt="{{$product->images[0]->img_title}}">
+
                             <div class="img-cap">
                                 <span>Add to cart</span>
                             </div>
