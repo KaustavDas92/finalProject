@@ -14,9 +14,16 @@ class FrontendController extends Controller
      */
     public function index()
     {
-       $products=Product::all();
+       $rolexes=Product::where('product_category_id',1)
+           ->where('price','>=',1500)
+           ->paginate(3);
 
-        return view('website.frontend.layouts.main',['products'=>$products]);
+        $rados=Product::where('product_category_id',2)
+            ->where('price','>=',10000)
+            ->paginate(3);
+
+        $latest=Product::orderBy('created_at', 'desc')->paginate(3);
+        return view('website.frontend.layouts.main',['rolexes'=>$rolexes,'rados'=>$rados,'latest'=>$latest]);
     }
 
     /**

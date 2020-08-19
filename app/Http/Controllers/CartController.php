@@ -15,7 +15,7 @@ class CartController extends Controller
      */
     public function index()
     {
-        $carts=Cart::all();
+        $carts=Cart::where('user_id',auth()->user()->id)->get();
         $subTotal=0.0;
         foreach ($carts as $cart)
         {
@@ -47,6 +47,7 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request,[
             'product'=>'unique:carts,product_id'
         ]);
@@ -62,7 +63,7 @@ class CartController extends Controller
             'quantity'=>$quantity,
             'total'=>$total
         ])->firstorFail();
-        return back();
+        return back()->with('message','Item Added to the Cart');
     }
 
     /**

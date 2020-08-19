@@ -21,153 +21,143 @@
     </div>
     <!--================ confirmation part start =================-->
     <section class="confirmation_part section_padding">
+       <div class="container">
         <div class="col-md-12 col-sm-12 ">
-            <div class="x_panel">
-                <div class="x_title">
-                    <h2>Product Category</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
-
+            @forelse($orders as $order)
+                <div class="mb-5 x_panel border border-dark rounded p-3">
+                    <div class="x_title">
+                        <h2>Order ID: {{$order->id}}</h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-down"></i></a>
+                            </li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content" style="display: none;">
+                        <div class="row">
+                            <div class="col-lg-6 col-lx-4">
+                                <div class="single_confirmation_details">
+                                    <h4>order info</h4>
+                                    <ul>
+                                        <li>
+                                            <p>order number</p><span>: {{$order->id}}</span>
+                                        </li>
+                                        <li>
+                                            <p>data</p><span>:
+                                    {{
+                                        $order->created_at->getTranslatedMonthName()
+                                        ." "
+                                        .$order->created_at->day
+                                        .", "
+                                        .$order->created_at->year}}
+                                </span>
+                                        </li>
+                                        <li>
+                                            <p>total</p><span>: Rs {{$order->payment->total}}</span>
+                                        </li>
+                                        <li>
+                                            <p>Payment Method</p><span>: {{$order->payment->payment_type}}</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                        </li>
-                        <li><a class="close-link"><i class="fa fa-close"></i></a>
-                        </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="x_content" style="display: block;">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="card-box table-responsive">
-                                <div id="datatable-responsive_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap no-footer">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="dataTables_length" id="datatable-responsive_length">
-                                                <label>
-                                                    Show
-                                                    <select name="datatable-responsive_length" aria-controls="datatable-responsive" class="form-control input-sm">
-                                                        <option value="10">
-                                                            10
-                                                        </option>
-                                                        <option value="25">
-                                                            25
-                                                        </option>
-                                                        <option value="50">
-                                                            50
-                                                        </option>
-                                                        <option value="100">
-                                                            100
-                                                        </option>
-                                                    </select>
-                                                    entries
-                                                </label>
-                                            </div>
-                                        </div>
+                            <div class="col-lg-6 col-lx-4">
+                                <div class="single_confirmation_details">
+                                    <h4>Billing Address</h4>
+                                    <ul>
+                                        <li>
+                                            <p>name</p><span>: {{$order->payment->customer->fname." ".$order->payment->customer->lname}}</span>
+                                        </li>
+                                        <li>
+                                            <p>phone number</p><span>: {{$order->payment->customer->phone_number}}</span>
+                                        </li>
+                                        <li>
+                                            <p>Address line 1</p><span>: {{$order->payment->customer->address1}}</span>
+                                        </li>
+                                        <li>
+                                            <p>Address line 2</p><span>: {{$order->payment->customer->address2}}</span>
+                                        </li>
+                                        <li>
+                                            <p>city</p><span>: {{$order->payment->customer->town}}</span>
+                                        </li>
+                                        <li>
+                                            <p>country</p><span>: {{$order->payment->customer->country}}</span>
+                                        </li>
+                                        <li>
+                                            <p>postcode</p><span>: {{$order->payment->customer->pincode}}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="order_details_iner">
+                                    <h3>Order Details</h3>
+                                    <table class="table table-borderless">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" colspan="2">Product</th>
+                                            <th scope="col" >Price</th>
+                                            <th scope="col">Quantity</th>
+                                            <th scope="col">Total</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @for($i=0;$i<count($order->payment->products());$i++)
+                                            <tr>
+                                                <th colspan="2"><span>
+                                                        {{$order->payment->products()[$i]->name}}
+                                                    </span></th>
+                                                <th><span>
+                                                        Rs. {{$order->payment->products()[$i]->price}}
+                                                    </span></th>
+                                                <th><span>
+                                                        x{{$order->payment->quantities[$i]}}
+                                                    </span></th>
+                                                <th>
+                                                    Rs. {{$order->payment->products()[$i]->price * $order->payment->quantities[$i]}}
+                                                </th>
+                                            </tr>
+                                        @endfor
 
-                                        <div class="col-sm-4">
-                                            <div id="datatable-responsive_filter" class="dataTables_filter">
-                                                <label> Create a new Product Category
-                                                    <form method="GET" action="http://127.0.0.1:8000/dashboard/productcategory/create">
-                                                        <input type="hidden" name="_token" value="iJnPsrA7n9L8OJxnGbTjtpUaSwXYTd2aM1gPKVan">                                                    <button type="submit" class="btn btn-success text-sm-center rounded">
-                                                            Create
-                                                        </button>
-                                                    </form>
+                                        <tr>
+                                            <th colspan="4">Subtotal</th>
+                                            <th>
+                                                Rs. {{$order->payment->total-50 }}
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col" colspan="3">Quantity</th>
+                                            <th><span>
+                                                    x{{array_sum($order->payment->quantities)}}
+                                                </span></th>
+                                        </tr>
+                                        </tbody>
+                                        <tfoot>
 
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div id="datatable-responsive_filter" class="dataTables_filter">
-                                                <label>
-                                                    Search:
-                                                    <input type="search" class="form-control input-sm" placeholder="" aria-controls="datatable-responsive">
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap dataTable no-footer dtr-inline collapsed" cellspacing="0" width="100%" role="grid" aria-describedby="datatable-responsive_info" style="width: 100%;">
-                                                <thead>
-                                                <tr role="row">
-                                                    <th class="sorting_asc" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" style="width: 66px;" aria-sort="ascending" aria-label="First name: activate to sort column descending">Product Category Name</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" style="width: 65px;" aria-label="Last name: activate to sort column ascending">Status</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable-responsive" rowspan="1" colspan="1" style="width: 65px;" aria-label="Last name: activate to sort column ascending">Action</th>
-                                                </tr>
-                                                </thead>
-
-                                                <tbody>
-                                                <tr role="row" class="odd">
-                                                    <td tabindex="0" class="sorting_1">Rolex</td>
-                                                    <td>active</td>
-                                                    <td class="flex">
-                                                        <a class="btn btn-app" href="http://127.0.0.1:8000/dashboard/productcategory/1/edit">
-                                                            <i class="fa fa-edit"></i>
-                                                            Edit
-                                                        </a>
-                                                        <form method="POST" action="http://127.0.0.1:8000/dashboard/productcategory/1">
-                                                            <input type="hidden" name="_token" value="iJnPsrA7n9L8OJxnGbTjtpUaSwXYTd2aM1gPKVan">                                                            <input type="hidden" name="_method" value="DELETE">                                                        <button class="btn btn-app">
-                                                                <i class="fa fa-remove"></i>
-                                                                Delete
-                                                            </button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-5">
-                                            <div class="dataTables_info" id="datatable-responsive_info" role="status" aria-live="polite">
-                                                Showing 1 to 10 of 57 entries
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-7">
-                                            <div class="dataTables_paginate paging_simple_numbers" id="datatable-responsive_paginate">
-                                                <ul class="pagination">
-                                                    <li class="paginate_button previous disabled" id="datatable-responsive_previous">
-                                                        <a href="#" aria-controls="datatable-responsive" data-dt-idx="0" tabindex="0">Previous</a>
-                                                    </li>
-                                                    <li class="paginate_button active">
-                                                        <a href="#" aria-controls="datatable-responsive" data-dt-idx="1" tabindex="0">1</a>
-                                                    </li>
-                                                    <li class="paginate_button ">
-                                                        <a href="#" aria-controls="datatable-responsive" data-dt-idx="2" tabindex="0">2</a>
-                                                    </li>
-                                                    <li class="paginate_button ">
-                                                        <a href="#" aria-controls="datatable-responsive" data-dt-idx="3" tabindex="0">3</a>
-                                                    </li>
-                                                    <li class="paginate_button ">
-                                                        <a href="#" aria-controls="datatable-responsive" data-dt-idx="4" tabindex="0">4</a>
-                                                    </li>
-                                                    <li class="paginate_button ">
-                                                        <a href="#" aria-controls="datatable-responsive" data-dt-idx="5" tabindex="0">5</a>
-                                                    </li>
-                                                    <li class="paginate_button ">
-                                                        <a href="#" aria-controls="datatable-responsive" data-dt-idx="6" tabindex="0">6</a>
-                                                    </li>
-                                                    <li class="paginate_button next" id="datatable-responsive_next">
-                                                        <a href="#" aria-controls="datatable-responsive" data-dt-idx="7" tabindex="0">Next</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        <tr>
+                                            <th colspan="3">shipping</th>
+                                            <th><span>flat rate: Rs.50.00</span></th>
+                                            <th scope="col">Total: Rs.
+                                                {{$order->payment->total}}
+                                            </th>
+                                        </tr>
+                                        </tfoot>
+                                    </table>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @empty
+                You have not Ordered anything yet
+            @endforelse
+
         </div>
+       </div>
     </section>
     <!--================ confirmation part end =================-->
 </main>

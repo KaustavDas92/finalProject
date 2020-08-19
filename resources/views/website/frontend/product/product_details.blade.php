@@ -66,6 +66,7 @@
                                 <div class="add_to_cart">
                                     <button  type="submit" class="btn_3">add to cart</button>
                                 </div>
+
                             </div>
                         </form>
 

@@ -12,4 +12,12 @@ class ProductCategory extends Model
     {
         return $this->hasMany(Product::class);
     }
+    public function mens()
+    {
+        return $this->products()->where('gender','=','male')->exists();
+    }
+    public function womens()
+    {
+        return $this->products()->where('gender','=','female')->exists();
+    }
 }

@@ -18,7 +18,7 @@ class ProductImageController extends Controller
     public function index()
     {
 
-        $productImages=ProductImage::all();
+        $productImages=ProductImage::orderBy('created_at', 'desc')->get();;
         return  view('website.backend.product_image.index',['productImages'=>$productImages]);
     }
 

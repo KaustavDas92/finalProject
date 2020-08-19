@@ -81,39 +81,22 @@
                 </div>
             </div>
             <div class="row">
+                @foreach($latest as $new)
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                     <div class="single-new-pro mb-30 text-center">
                         <div class="product-img">
-                            <img src="assets/img/gallery/new_product1.png" alt="">
+                            <img src="{{asset('images/'.$new->images[0]->image)}}"
+                                 height="447"
+                                 width="330"
+                                 alt="{{$new->images[0]->img_title}}">
                         </div>
                         <div class="product-caption">
-                            <h3><a href="product_details.html">Thermo Ball Etip Gloves</a></h3>
-                            <span>$ 45,743</span>
+                            <h3><a href="{{route('home.show',$new->id)}}">{{$new->name}}</a></h3>
+                            <span>Rs. {{$new->price}}</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-new-pro mb-30 text-center">
-                        <div class="product-img">
-                            <img src="assets/img/gallery/new_product2.png" alt="">
-                        </div>
-                        <div class="product-caption">
-                            <h3><a href="product_details.html">Thermo Ball Etip Gloves</a></h3>
-                            <span>$ 45,743</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-new-pro mb-30 text-center">
-                        <div class="product-img">
-                            <img src="assets/img/gallery/new_product3.png" alt="">
-                        </div>
-                        <div class="product-caption">
-                            <h3><a href="product_details.html">Thermo Ball Etip Gloves</a></h3>
-                            <span>$ 45,743</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -158,118 +141,116 @@
             <div class="row justify-content-center">
                 <div class="col-xl-7 col-lg-8 col-md-10">
                     <div class="section-tittle mb-70 text-center">
-                        <h2>Popular Items</h2>
+                        <h2>Premium Rolex Watches </h2>
                         <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                @foreach($products as $product)
+
+                <form name="RolexForm" id="RolexForm" method="POST"
+                      action="">
+                    @csrf
+                    <div class="row">
+                @foreach($rolexes as $rolex)
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                     <div class="single-popular-items mb-50 text-center">
                         <div class="popular-img">
-                            <img src="{{asset('images/'.$product->images[0]->image)}}" alt="{{$product->images[0]->img_title}}">
+                            <img src="{{asset('images/'.$rolex->images[0]->image)}}"
+                                 height="330"
+                                 width="347.36"
+                                 alt="{{$rolex->images[0]->img_title}}">
 
-                            <div class="img-cap">
-                                <span>Add to cart</span>
-                            </div>
+
+                                <div class="img-cap">
+{{--                                    <input type="hidden" name="product"  value="{{$rolex->id}}">--}}
+                                    <input type="hidden" name="quantity"  value="1">
+{{--                                    <span onclick="document.forms['myForm'].submit();" id="{{$rolex->id}}">Add to cart</span>--}}
+                                    <span onclick="send(this.id);" id="{{$rolex->id}}">Add to cart</span>
+
+                                   <script>
+                                        function send(thisID)
+                                        {
+                                            var x = "/cart?product="+thisID;
+                                            console.log(x);
+                                            document.getElementById('RolexForm').setAttribute('action', x);
+                                            document.forms['RolexForm'].submit();
+                                        }
+
+                                    </script>
+                                </div>
+
                             <div class="favorit-items">
                                 <span class="flaticon-heart"></span>
                             </div>
                         </div>
                         <div class="popular-caption">
-                            <h3><a href="{{route('home.show',$product->id)}}">{{$product->name}}</a></h3>
-                            <span>Rs {{$product->price}}</span>
+                            <h3><a href="{{route('home.show',$rolex->id)}}">{{$rolex->name}}</a></h3>
+                            <span>Rs {{$rolex->price}}</span>
                         </div>
                     </div>
                 </div>
             @endforeach
-{{--                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">--}}
-{{--                    <div class="single-popular-items mb-50 text-center">--}}
-{{--                        <div class="popular-img">--}}
-{{--                            <img src="assets/img/gallery/popular2.png" alt="">--}}
-{{--                            <div class="img-cap">--}}
-{{--                                <span>Add to cart</span>--}}
-{{--                            </div>--}}
-{{--                            <div class="favorit-items">--}}
-{{--                                <span class="flaticon-heart"></span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="popular-caption">--}}
-{{--                            <h3><a href="product_details.html">Thermo Ball Etip Gloves</a></h3>--}}
-{{--                            <span>$ 45,743</span>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">--}}
-{{--                    <div class="single-popular-items mb-50 text-center">--}}
-{{--                        <div class="popular-img">--}}
-{{--                            <img src="assets/img/gallery/popular3.png" alt="">--}}
-{{--                            <div class="img-cap">--}}
-{{--                                <span>Add to cart</span>--}}
-{{--                            </div>--}}
-{{--                            <div class="favorit-items">--}}
-{{--                                <span class="flaticon-heart"></span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="popular-caption">--}}
-{{--                            <h3><a href="product_details.html">Thermo Ball Etip Gloves</a></h3>--}}
-{{--                            <span>$ 45,743</span>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">--}}
-{{--                    <div class="single-popular-items mb-50 text-center">--}}
-{{--                        <div class="popular-img">--}}
-{{--                            <img src="assets/img/gallery/popular4.png" alt="">--}}
-{{--                            <div class="img-cap">--}}
-{{--                                <span>Add to cart</span>--}}
-{{--                            </div>--}}
-{{--                            <div class="favorit-items">--}}
-{{--                                <span class="flaticon-heart"></span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="popular-caption">--}}
-{{--                            <h3><a href="product_details.html">Thermo Ball Etip Gloves</a></h3>--}}
-{{--                            <span>$ 45,743</span>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">--}}
-{{--                    <div class="single-popular-items mb-50 text-center">--}}
-{{--                        <div class="popular-img">--}}
-{{--                            <img src="assets/img/gallery/popular5.png" alt="">--}}
-{{--                            <div class="img-cap">--}}
-{{--                                <span>Add to cart</span>--}}
-{{--                            </div>--}}
-{{--                            <div class="favorit-items">--}}
-{{--                                <span class="flaticon-heart"></span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="popular-caption">--}}
-{{--                            <h3><a href="product_details.html">Thermo Ball Etip Gloves</a></h3>--}}
-{{--                            <span>$ 45,743</span>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">--}}
-{{--                    <div class="single-popular-items mb-50 text-center">--}}
-{{--                        <div class="popular-img">--}}
-{{--                            <img src="assets/img/gallery/popular6.png" alt="">--}}
-{{--                            <div class="img-cap">--}}
-{{--                                <span>Add to cart</span>--}}
-{{--                            </div>--}}
-{{--                            <div class="favorit-items">--}}
-{{--                                <span class="flaticon-heart"></span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="popular-caption">--}}
-{{--                            <h3><a href="product_details.html">Thermo Ball Etip Gloves</a></h3>--}}
-{{--                            <span>$ 45,743</span>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+                    </div>
+                </form>
+
+            <!-- Button -->
+            <div class="row justify-content-center mb-150">
+                <div class="room-btn pt-70">
+                    <a href="catagori.html" class="btn view-btn1">View More Products</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!-- Section tittle -->
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-8 col-md-10">
+                    <div class="section-tittle mb-70 text-center">
+                        <h2>Premium Rado Watches </h2>
+                        <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                    </div>
+                </div>
+            </div>
+            <form name="RadoForm" id="RadoForm" method="POST"
+                  action="">
+                @csrf
+            <div class="row">
+                @foreach($rados as $rado)
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-popular-items mb-50 text-center">
+                            <div class="popular-img">
+                                <img src="{{asset('images/'.$rado->images[0]->image)}}"
+                                     height="347.62"
+                                     width="330"
+                                     alt="{{$rado->images[0]->img_title}}">
+
+                                    <div class="img-cap">
+                                        <input type="hidden" name="quantity"  value="1">
+                                        <span onclick="send(this.id);" id="{{$rado->id}}">Add to cart</span>
+
+                                        <script>
+                                            function send(thisID)
+                                            {
+                                                var x = "/cart?product="+thisID;
+                                                document.getElementById('RadoForm').setAttribute('action', x);
+                                                document.forms['RadoForm'].submit();
+                                            }
+
+                                        </script>
+                                    </div>
+
+                                <div class="favorit-items">
+                                    <span class="flaticon-heart"></span>
+                                </div>
+                            </div>
+                            <div class="popular-caption">
+                                <h3><a href="{{route('home.show',$rado->id)}}">{{$rado->name}}</a></h3>
+                                <span>Rs {{$rado->price}}</span>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            </form>
             <!-- Button -->
             <div class="row justify-content-center">
                 <div class="room-btn pt-70">
@@ -278,27 +259,8 @@
             </div>
         </div>
     </div>
+
     <!-- Popular Items End -->
-    <!--? Video Area Start -->
-    <div class="video-area">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-lg-12">
-                    <div class="video-wrap">
-                        <div class="play-btn "><a class="popup-video" href="https://www.youtube.com/watch?v=KMc6DyEJp04"><i class="fas fa-play"></i></a></div>
-                    </div>
-                </div>
-            </div>
-            <!-- Arrow -->
-            <div class="thumb-content-box">
-                <div class="thumb-content">
-                    <h3>Next Video</h3>
-                    <a href="#"> <i class="flaticon-arrow"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Video Area End -->
     <!--? Watch Choice  Start-->
     <div class="watch-area section-padding30">
         <div class="container">
@@ -365,91 +327,7 @@
     </div>
     <!-- Shop Method End-->
 </main>
-<footer>
-    <!-- Footer Start-->
-    <div class="footer-area footer-padding">
-        <div class="container">
-            <div class="row d-flex justify-content-between">
-                <div class="col-xl-3 col-lg-3 col-md-5 col-sm-6">
-                    <div class="single-footer-caption mb-50">
-                        <div class="single-footer-caption mb-30">
-                            <!-- logo -->
-                            <div class="footer-logo">
-                                <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
-                            </div>
-                            <div class="footer-tittle">
-                                <div class="footer-pera">
-                                    <p>Asorem ipsum adipolor sdit amet, consectetur adipisicing elitcf sed do eiusmod tem.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
-                    <div class="single-footer-caption mb-50">
-                        <div class="footer-tittle">
-                            <h4>Quick Links</h4>
-                            <ul>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#"> Offers & Discounts</a></li>
-                                <li><a href="#"> Get Coupon</a></li>
-                                <li><a href="#">  Contact Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
-                    <div class="single-footer-caption mb-50">
-                        <div class="footer-tittle">
-                            <h4>New Products</h4>
-                            <ul>
-                                <li><a href="#">Woman Cloth</a></li>
-                                <li><a href="#">Fashion Accessories</a></li>
-                                <li><a href="#"> Man Accessories</a></li>
-                                <li><a href="#"> Rubber made Toys</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
-                    <div class="single-footer-caption mb-50">
-                        <div class="footer-tittle">
-                            <h4>Support</h4>
-                            <ul>
-                                <li><a href="#">Frequently Asked Questions</a></li>
-                                <li><a href="#">Terms & Conditions</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Report a Payment Issue</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Footer bottom -->
-            <div class="row align-items-center">
-                <div class="col-xl-7 col-lg-8 col-md-7">
-                    <div class="footer-copy-right">
-                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                    </div>
-                </div>
-                <div class="col-xl-5 col-lg-4 col-md-5">
-                    <div class="footer-copy-right f-right">
-                        <!-- social -->
-                        <div class="footer-social">
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-behance"></i></a>
-                            <a href="#"><i class="fas fa-globe"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End-->
-</footer>
+@include('website.frontend.layouts.footer')
 <!--? Search model Begin -->
 <div class="search-model-box">
     <div class="h-100 d-flex align-items-center justify-content-center">

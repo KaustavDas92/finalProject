@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Order;
+use App\Product;
 use Illuminate\Http\Request;
 
-class OrdersController extends Controller
+class ListController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,10 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        //
+        $products=Product::paginate(6);
+        $expensive=Product::orderBy('price','DESC')->paginate(6);
+        $inexpensive=Product::orderBy('price')->paginate(6);
+        return view('website.frontend.list.index',['products'=>$products,'expensive'=>$expensive,'inexpensive'=>$inexpensive]);
     }
 
     /**
@@ -46,10 +49,11 @@ class OrdersController extends Controller
      */
     public function show($id)
     {
-        $orders=Order::where('user_id',$id)
-            ->latest()
-            ->get();
-        return view('website.frontend.orders',['orders'=>$orders]);
+
+        $products=Product::where('product_category_id',$id)->paginate(6);
+        $expensive=Product::where('product_category_id',$id)->orderBy('price','DESC')->paginate(6);
+        $inexpensive=Product::where('product_category_id',$id)->orderBy('price')->paginate(6);
+        return view('website.frontend.list.show',['products'=>$products,'expensive'=>$expensive,'inexpensive'=>$inexpensive]);
     }
 
     /**

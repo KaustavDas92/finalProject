@@ -39,6 +39,9 @@ class CustomerDetailController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'email'=>'required|email'
+        ]);
         CustomerDetail::create($request->all());
         return redirect(route('customerdetail.index'));
     }

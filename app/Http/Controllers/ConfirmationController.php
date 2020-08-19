@@ -78,7 +78,7 @@ class ConfirmationController extends Controller
         ]);
 
         Cart::where('user_id',auth()->user()->id)->delete();
-        return redirect(route('confirmation.index'));
+        return redirect(route('confirmation.index'))->with('message','Payment Done Successfully!! A new Order Has Been Created');
     }
 
     /**

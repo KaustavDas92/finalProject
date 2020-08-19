@@ -16,4 +16,15 @@ class Payment extends Model
     {
         return $this->belongsTo(CustomerDetail::class);
     }
+    function products()
+    {
+        $productss=array();
+        $productIds=$this->product_ids;
+        foreach ($productIds as $ids)
+        {
+            $prod=Product::find($ids);
+            array_push($productss,$prod);
+        }
+        return $productss;
+    }
 }

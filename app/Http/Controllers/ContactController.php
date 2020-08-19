@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Contact;
+use App\ContactForm;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -14,8 +15,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts=Contact::all();
-        return view('website.backend.contact.index',['contacts'=>$contacts]);
+
+        return view('website.frontend.Contact');
     }
 
     /**
@@ -25,7 +26,6 @@ class ContactController extends Controller
      */
     public function create()
     {
-        return view ('website.backend.contact.create');
     }
 
     /**
@@ -36,8 +36,23 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        Contact::create($request->all());
-        return redirect(route('contact.index'));
+        $request->validate([
+            'message'=>'required|max:250',
+            'email'=>'required|email',
+            'name'=>'required',
+            'subject'=>'required'
+        ]);
+
+        dd($request->email);
+        ContactForm::create([
+            'message'=>$request->message,
+            'username'=>$request->name,
+            'email'=>$request->email,
+            'subject'=>$request->subject
+        ]);
+
+
+        return redirect(route('contact.index'))->with('message','Email Sent');
     }
 
     /**
