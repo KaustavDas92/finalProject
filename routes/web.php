@@ -41,4 +41,5 @@ Route::resource('/dashboard/productimage','ProductImageController');
 Route::resource('/dashboard/customerdetail','CustomerDetailController');
 Route::resource('/dashboard/payment','PaymentController');
 Route::resource('/contact','ContactController');
+Route::resource('billingDetails','BillingController');
 Route::resource('/dashboard/contactform','ContactFormController');

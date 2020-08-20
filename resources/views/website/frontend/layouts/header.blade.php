@@ -64,13 +64,30 @@
                     <!-- Header Right -->
                     <div class="header-right">
                         <ul>
-                            <li>
-                                <div class="nav-search search-switch">
-                                    <span class="flaticon-search"></span>
-                                </div>
+                            <form name="logoutForm" id="logoutForm" method="POST" action="/logout">
+                                @csrf
+                                <li> <span class="flaticon-arrow" onclick="document.forms['logoutForm'].submit();"> Logout</span>
+                                    {{--                                <ul class="submenu">--}}
+                                    {{--                                    <li><a href="shop.html"> Product list</a></li>--}}
+                                    {{--                                    <li><a href="product_details.html"> Product Details</a></li>--}}
+                                    {{--                                </ul>--}}
+                                    {{--                                <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">--}}
+                                    {{--                                    <a class="dropdown-item" href="javascript:;"> Profile</a>--}}
+                                    {{--                                    <a class="dropdown-item" href="javascript:;">--}}
+                                    {{--                                        <span class="badge bg-red pull-right">50%</span>--}}
+                                    {{--                                        <span>Settings</span>--}}
+                                    {{--                                    </a>--}}
+                                    {{--                                    <a class="dropdown-item" href="javascript:;">Help</a>--}}
+                                    {{--                                    <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>--}}
+                                    {{--                                </div>--}}
+
+                                </li>
+                            </form>
+                            @if(auth()->user()->admin)
+                            <li><a href="/dashboard"><span class="flaticon-user"> DashBoard</span></a> </li>
+                            @endif
+                            <li><a href="{{route('cart.index')}}"><span class="flaticon-shopping-cart"></span></a>
                             </li>
-                            <li> <a href="login.html"><span class="flaticon-user"></span></a></li>
-                            <li><a href="cart.html"><span class="flaticon-shopping-cart"></span></a> </li>
                         </ul>
                     </div>
                 </div>

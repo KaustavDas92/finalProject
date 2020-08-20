@@ -27,7 +27,7 @@ class CreateCustomerDetailsTable extends Migration
             $table->string('town');
             $table->string('district');
             $table->integer('pincode');
-            $table->text('other_notes');
+            $table->text('other_notes')->default('NA');
             $table->timestamps();
 
             $table->foreign('user_id')

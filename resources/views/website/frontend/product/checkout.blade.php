@@ -46,7 +46,8 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <h3>Billing Details</h3>
-                        <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                        <form class="row contact_form" action="{{route('billingDetails.edit',$customer->id)}}" method="GET" novalidate="novalidate">
+                            @csrf
                             <div class="col-md-6 form-group p_star">
                                 <input type="text" class="form-control font-weight-bold" value="{{$customer->fname}}" readonly id="fname" name="fname"  />
                             </div>
@@ -88,7 +89,11 @@
                                 <textarea class="form-control font-weight-bold" value="{{$customer->other_notes}}" readonly name="message" id="message" rows="1"
                                           ></textarea>
                             </div>
+                            <button type="submit" class="btn btn-dark">
+                            Edit Details
+                            </button>
                         </form>
+
                     </div>
                     <div class="col-lg-4">
                         <div class="order_box">

@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Contact;
-use App\ContactForm;
-use App\Mail\ContactUs;
+use App\CustomerDetail;
 use Illuminate\Http\Request;
-use Illuminate\Mail\Mailable;
-use Illuminate\Support\Facades\Mail;
 
-class ContactController extends Controller
+class BillingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +14,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-
-        return view('website.frontend.Contact.Contact');
+        //
     }
 
     /**
@@ -29,6 +24,7 @@ class ContactController extends Controller
      */
     public function create()
     {
+        //
     }
 
     /**
@@ -39,67 +35,68 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'message'=>'required|max:250',
-            'email'=>'required|email',
-            'name'=>'required',
-            'subject'=>'required'
-        ]);
-
-        Mail::send(new ContactUs($request));
-        ContactForm::create([
-            'message'=>$request->message,
-            'username'=>$request->name,
-            'email'=>$request->email,
-            'subject'=>$request->subject
-        ]);
-
-
-        return redirect(route('contact.index'))->with('message','Email Sent');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Contact  $contact
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Contact $contact)
+    public function show($id)
     {
-        //
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Contact  $contact
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-
+        $customer=CustomerDetail::find($id);
+        return view('website.frontend.customer_details.Edit',['customer'=>$customer]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Contact  $contact
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
+        $customerDetail=CustomerDetail::find($id);
+        $request->validate([
+            'fname'=>'required',
+            'lname'=>'required',
+            'company_name'=>'required',
+            'phone_number'=>'required|numeric',
+            'country'=>'required',
+            'address1'=>'required',
+            'address2'=>'required',
+            'town'=>'required',
+            'district'=>'required',
+            'pincode'=>'required',
+            'email'=>'required|email'
+        ]);
+        $customerDetail->update($request->all());
 
+        return redirect(route('checkout.index'))->with('message','Customer Details Updated Successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Contact  $contact
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-
+        //
     }
 }
