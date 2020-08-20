@@ -64,6 +64,10 @@ class ConfirmationController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'payment_type'=>'required',
+            'selector'=>'required'
+        ]);
         $payment=Payment::create([
             'product_ids'=>$request->products,
             'quantities'=>$request->quantities,

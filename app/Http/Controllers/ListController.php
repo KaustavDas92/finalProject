@@ -12,11 +12,28 @@ class ListController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products=Product::paginate(6);
-        $expensive=Product::orderBy('price','DESC')->paginate(6);
-        $inexpensive=Product::orderBy('price')->paginate(6);
+        if($request->gender=='male')
+        {
+            $products=Product::where('gender','male')->latest()->paginate(9);
+            $expensive=Product::where('gender','male')->orderBy('price','DESC')->paginate(9);
+            $inexpensive=Product::where('gender','male')->orderBy('price')->paginate(9);
+
+        }
+        else if($request->gender=='female')
+        {
+            $products=Product::where('gender','female')->latest()->paginate(9);
+            $expensive=Product::where('gender','female')->orderBy('price','DESC')->paginate(9);
+            $inexpensive=Product::where('gender','female')->orderBy('price')->paginate(9);
+        }
+        else
+        {
+            $products=Product::latest()->paginate(9);
+            $expensive=Product::orderBy('price','DESC')->paginate(9);
+            $inexpensive=Product::orderBy('price')->paginate(9);
+        }
+
         return view('website.frontend.list.index',['products'=>$products,'expensive'=>$expensive,'inexpensive'=>$inexpensive]);
     }
 
@@ -47,12 +64,28 @@ class ListController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request,$id)
     {
+        if($request->gender=="male")
+        {
+            $products=Product::where('product_category_id',$id)->where('gender','male')->latest()->paginate(9);
+            $expensive=Product::where('product_category_id',$id)->where('gender','male')->orderBy('price','DESC')->paginate(9);
+            $inexpensive=Product::where('product_category_id',$id)->where('gender','male')->orderBy('price')->paginate(9);
+        }
+        else if($request->gender=="female")
+        {
+            $products=Product::where('product_category_id',$id)->where('gender','female')->latest()->paginate(9);
+            $expensive=Product::where('product_category_id',$id)->where('gender','female')->orderBy('price','DESC')->paginate(9);
+            $inexpensive=Product::where('product_category_id',$id)->where('gender','female')->orderBy('price')->paginate(9);
+        }
+        else
+        {
+            $products=Product::where('product_category_id',$id)->latest()->paginate(9);
+            $expensive=Product::where('product_category_id',$id)->orderBy('price','DESC')->paginate(9);
+            $inexpensive=Product::where('product_category_id',$id)->orderBy('price')->paginate(9);
+        }
 
-        $products=Product::where('product_category_id',$id)->paginate(6);
-        $expensive=Product::where('product_category_id',$id)->orderBy('price','DESC')->paginate(6);
-        $inexpensive=Product::where('product_category_id',$id)->orderBy('price')->paginate(6);
+
         return view('website.frontend.list.show',['products'=>$products,'expensive'=>$expensive,'inexpensive'=>$inexpensive]);
     }
 

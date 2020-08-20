@@ -25,6 +25,10 @@ Route::get('/dashboard', 'BackendController@index')->name('backend.index');
 //{
 //   return view('website.frontend.product.product_details');
 //});
+Route::get('/about', function ()
+{
+   return view('website.frontend.about');
+});
 Route::resource('/home','FrontendController');
 Route::get('/cart','CartController@index')->name('cart.index');
 Route::put('/cart/{cart}','CartController@update')->name('cart.update');

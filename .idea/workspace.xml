@@ -25,18 +25,23 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e53611b-7921-4a8f-a64d-9719870ec2b4" name="Default Changelist" comment="2nd comit">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/BillingController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Mail/ContactUs.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/website/frontend/Contact/emails/ContactForm.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/website/frontend/customer_details/Edit.blade.php" afterDir="false" />
+    <list default="true" id="7e53611b-7921-4a8f-a64d-9719870ec2b4" name="Default Changelist" comment="4th">
+      <change afterPath="$PROJECT_DIR$/public/images/1597932418.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1597932445.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1597932470.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1597932487.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1597932613.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1597932936.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1597932984.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1597933006.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/website/frontend/about.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_13_210258_create_customer_details_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_13_210258_create_customer_details_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/backend/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/backend/layouts/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/backend/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/backend/layouts/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/frontend/Contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/frontend/Contact/Contact.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ConfirmationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ConfirmationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ListController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ListController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/frontend/customer_details/Edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/frontend/customer_details/Edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/frontend/customer_details/customerDetails_new.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/frontend/customer_details/customerDetails_new.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/website/frontend/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/frontend/layouts/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/frontend/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/frontend/layouts/main.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/website/frontend/product/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/frontend/product/checkout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -226,7 +231,7 @@
       <workItem from="1597738737304" duration="35954000" />
       <workItem from="1597826997586" duration="29826000" />
       <workItem from="1597910559503" duration="3029000" />
-      <workItem from="1597917090464" duration="10379000" />
+      <workItem from="1597917090464" duration="24809000" />
     </task>
     <task id="LOCAL-00001" summary="2nd comit">
       <created>1597757145357</created>
@@ -235,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597757145357</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="3rd commit">
+      <created>1597930349285</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1597930349285</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +280,9 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="2nd comit" />
-    <option name="LAST_COMMIT_MESSAGE" value="2nd comit" />
+    <MESSAGE value="3rd commit" />
+    <MESSAGE value="4th" />
+    <option name="LAST_COMMIT_MESSAGE" value="4th" />
   </component>
   <component name="WindowStateProjectService">
     <state x="452" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597788738520">
@@ -291,10 +305,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1597758665865" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1597757170376">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1597931946195">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1597757170376" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1597931946195" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1597765867791">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

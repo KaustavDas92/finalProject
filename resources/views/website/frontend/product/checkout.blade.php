@@ -144,6 +144,7 @@
                                         <label for="f-option5">Pay By Cash</label>
                                         <div class="check"></div>
                                     </div>
+
                                 </div>
                                 <div class="payment_item active">
                                     <div class="radion_btn">
@@ -151,7 +152,11 @@
                                         <label for="f-option6">Pay By Card </label>
                                         <div class="check"></div>
                                     </div>
+                                    @error('payment_type')
+                                    <p class="error text-white" style="background: indianred" >{{$message}}</p>
+                                    @enderror
                                 </div>
+
                                 <div class="creat_account">
                                     <input type="checkbox" id="selector" name="selector" required/>
                                     <label for="selector">I’ve read and accept the </label>

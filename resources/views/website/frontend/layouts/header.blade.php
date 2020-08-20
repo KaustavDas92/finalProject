@@ -20,22 +20,21 @@
 
                                     </ul>
                                 </li>
-                                <li><a href="about.html">about</a></li>
-                                <li><a href="#">Men's</a>
+                                <li><a href="/list?gender=male">Men's</a>
                                     <ul class="submenu">
                                         @foreach($product_category as $brands)
                                             @if($brands->mens())
-                                                <li><a href="{{route('list.show',$brands->id)}}"> {{$brands->brand_name}}</a></li>
+                                                <li><a href="/list/{{$brands->id}}?gender=male">{{$brands->brand_name}}</a></li>
                                             @endif
                                         @endforeach
 
                                     </ul>
                                 </li>
-                                <li><a href="#">Women's</a>
+                                <li><a href="/list?gender=female">Women's</a>
                                     <ul class="submenu">
                                         @foreach($product_category as $brands)
                                             @if($brands->womens())
-                                                <li><a href="{{route('list.show',$brands->id)}}"> {{$brands->brand_name}}</a></li>
+                                                <li><a href="/list/{{$brands->id}}?gender=female">{{$brands->brand_name}}</a></li>
                                             @endif
                                         @endforeach
 
@@ -52,11 +51,11 @@
                                 </li>
                                 <li><a href="#">Pages</a>
                                     <ul class="submenu">
-                                        <li><a href="login.html">Login</a></li>
                                         <li><a href="{{route('orders.show',auth()->user()->id)}}">Your Orders</a></li>
                                         <li><a href="checkout.html">Product Checkout</a></li>
                                     </ul>
                                 </li>
+                                <li><a href="/about">about</a></li>
                                 <li><a href="{{route('contact.index')}}">Contact</a></li>
                             </ul>
                         </nav>

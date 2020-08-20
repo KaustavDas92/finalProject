@@ -57,47 +57,71 @@
                             <div class="col-md-6 form-group p_star">
                                 <input type="text" id="fname"  name="fname" value="{{$customer->fname}}" required="required" class="form-control "/>
                                 {{--                                <span class="placeholder" data-placeholder="First name"></span>--}}
+                                @error('fname')
+                                <small class="form-text invalid-feedback">{{$message}}</small>
+                                @enderror
                             </div>
                             <div class="col-md-6 form-group p_star">
                                 <input type="text" id="lname"  name="lname" value="{{$customer->lname}}" required="required" class="form-control "/>
 
-                                {{--                                <span class="placeholder" data-placeholder="Last name"></span>--}}
+                                @error('lname')
+                                <small class="form-text invalid-feedback">{{$message}}</small>
+                                @enderror
                             </div>
                             <div class="col-md-12 form-group">
                                 <input type="text"  id="company_name" name="company_name" value="{{$customer->company_name}}" required="required" class="form-control"/>
+                                @error('company_name')
+                                <small class="form-text invalid-feedback">{{$message}}</small>
+                                @enderror
                             </div>
                             <div class="col-md-6 form-group p_star">
                                 <input id="phone_number" class="form-control"  type="number" name="phone_number" value="{{$customer->phone_number}}" required="required"/>
-                                {{--                                <span class="placeholder" data-placeholder="Phone number"></span>--}}
+                                @error('phone_number')
+                                <small class="form-text invalid-feedback">{{$message}}</small>
+                                @enderror
                             </div>
                             <div class="col-md-6 form-group p_star">
                                 <input type="email" id="email" name="email"  value="{{$customer->email}}" required="required" class="form-control "/>
-                                {{--                                <span class="placeholder" data-placeholder="Email Address"></span>--}}
+                                @error('email')
+                                <small class="form-text invalid-feedback">{{$message}}</small>
+                                @enderror
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" id="country" name="country" value="{{$customer->country}}" required="required" class="form-control "/>
-                                {{--                                <span class="placeholder" data-placeholder="Country"></span>--}}
+                                @error('country')
+                                <small class="form-text invalid-feedback">{{$message}}</small>
+                                @enderror
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" id="address1" name="address1" value="{{$customer->address1}}" required="required" class="form-control ">
-                                {{--                                <span class="placeholder" data-placeholder="Address line 01"></span>--}}
+                                @error('address1')
+                                <small class="form-text invalid-feedback">{{$message}}</small>
+                                @enderror
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" id="address2"  name="address2" value="{{$customer->address2}}" required="required" class="form-control ">
 
-                                {{--                                <span class="placeholder" data-placeholder="Address line 02"></span>--}}
+                                @error('address2')
+                                <small class="form-text invalid-feedback">{{$message}}</small>
+                                @enderror
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" id="town" name="town" required="required" value="{{$customer->town}}" class="form-control ">
-                                {{--                                <span class="placeholder" data-placeholder="Town/City"></span>--}}
+                                @error('town')
+                                <small class="form-text invalid-feedback">{{$message}}</small>
+                                @enderror
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" id="district" name="district" required="required" value="{{$customer->district}}" class="form-control ">
-                                {{--                                <span class="placeholder" data-placeholder="District"></span>--}}
+                                @error('district')
+                                <small class="form-text invalid-feedback">{{$message}}</small>
+                                @enderror
                             </div>
                             <div class="col-md-12 form-group">
                                 <input id="pincode" class="form-control" type="number" value="{{$customer->pincode}}" name="pincode" required="required">
-                                {{--                                <span class="placeholder" data-placeholder="Pin Code"></span>--}}
+                                @error('pincode')
+                                <small class="form-text invalid-feedback">{{$message}}</small>
+                                @enderror
                             </div>
                             {{--                            <div class="col-md-12 form-group">--}}
                             {{--                                <div class="creat_account">--}}

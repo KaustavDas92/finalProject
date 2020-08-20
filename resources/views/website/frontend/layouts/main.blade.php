@@ -31,9 +31,7 @@
                                 <h1 data-animation="fadeInLeft" data-delay=".4s" data-duration="2000ms">Select Your New Perfect Style</h1>
                                 <p data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat is aute irure.</p>
                                 <!-- Hero-btn -->
-                                <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s" data-duration="2000ms">
-                                    <a href="industries.html" class="btn hero-btn">Shop Now</a>
-                                </div>
+
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 d-none d-sm-block">
@@ -51,10 +49,10 @@
                         <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
                             <div class="hero__caption">
                                 <h1 data-animation="fadeInLeft" data-delay=".4s" data-duration="2000ms">Select Your New Perfect Style</h1>
-                                <p data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat is aute irure.</p>
+                                <p data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">First few words in English, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat is aute irure.</p>
                                 <!-- Hero-btn -->
                                 <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s" data-duration="2000ms">
-                                    <a href="industries.html" class="btn hero-btn">Shop Now</a>
+                                    <a href="/list" class="btn hero-btn">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -196,7 +194,7 @@
             <!-- Button -->
             <div class="row justify-content-center mb-150">
                 <div class="room-btn pt-70">
-                    <a href="catagori.html" class="btn view-btn1">View More Products</a>
+                    <a href="{{route('list.show',1)}}" class="btn view-btn1">View More Rolex Watches</a>
                 </div>
             </div>
         </div>
@@ -254,7 +252,7 @@
             <!-- Button -->
             <div class="row justify-content-center">
                 <div class="room-btn pt-70">
-                    <a href="catagori.html" class="btn view-btn1">View More Products</a>
+                    <a href="{{route('list.show',2)}}" class="btn view-btn1">View More Rado Watches</a>
                 </div>
             </div>
         </div>
@@ -269,7 +267,7 @@
                     <div class="watch-details mb-40">
                         <h2>Watch of Choice</h2>
                         <p>Enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-                        <a href="shop.html" class="btn">Show Watches</a>
+                        <a href="{{route('home.show',4)}}" class="btn">Show Watches</a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-10">
@@ -288,7 +286,7 @@
                     <div class="watch-details mb-40">
                         <h2>Watch of Choice</h2>
                         <p>Enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-                        <a href="shop.html" class="btn">Show Watches</a>
+                        <a href="{{route('home.show',1)}}" class="btn">Show Watches</a>
                     </div>
                 </div>
             </div>
