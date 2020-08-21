@@ -86,8 +86,6 @@
                                                             document.getElementById(cart_id).value=count;
 
                                                         }
-
-
                                                 </script>
                                                 </form>
                                             </div>

@@ -7,67 +7,53 @@ use Illuminate\Http\Request;
 
 class BillingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        $details=auth()->user()->customerDetails;
+       return view('website.frontend.customer_details.index',['details'=>$details]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        //
+        return view('website.frontend.customer_details.new');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'fname'=>'required',
+            'lname'=>'required',
+            'company_name'=>'required',
+            'phone_number'=>'required|numeric',
+            'country'=>'required',
+            'address1'=>'required',
+            'address2'=>'required',
+            'town'=>'required',
+            'district'=>'required',
+            'pincode'=>'required',
+            'email'=>'required|email'
+        ]);
+        CustomerDetail::create($request->all());
+        return redirect(route('billingDetails.index'))->with('message','New Billing Address Created');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
 
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
         $customer=CustomerDetail::find($id);
         return view('website.frontend.customer_details.Edit',['customer'=>$customer]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         $customerDetail=CustomerDetail::find($id);
@@ -86,7 +72,7 @@ class BillingController extends Controller
         ]);
         $customerDetail->update($request->all());
 
-        return redirect(route('checkout.index'))->with('message','Customer Details Updated Successfully');
+        return redirect(route('billingDetails.index'))->with('message','Customer Details Updated Successfully');
     }
 
     /**
@@ -97,6 +83,8 @@ class BillingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $customerDetail=CustomerDetail::find($id);
+        $customerDetail->delete();
+        return back();
     }
 }

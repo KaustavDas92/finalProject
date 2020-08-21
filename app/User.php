@@ -39,7 +39,7 @@ class User extends Authenticatable
 
     function customerDetails()
     {
-        return $this->hasOne(CustomerDetail::class);
+        return $this->hasMany(CustomerDetail::class);
     }
 
     function carts()

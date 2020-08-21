@@ -15,7 +15,7 @@ class FrontendController extends Controller
     public function index()
     {
        $rolexes=Product::where('product_category_id',1)
-           ->where('price','>=',1500)
+           ->where('price','>=',10000)
            ->paginate(3);
 
         $rados=Product::where('product_category_id',2)

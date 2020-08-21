@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Cart;
 use App\CustomerDetail;
 use Illuminate\Http\Request;
+use function GuzzleHttp\Promise\all;
 
 class CheckoutController extends Controller
 {
@@ -17,10 +18,11 @@ class CheckoutController extends Controller
     {
         $customer=CustomerDetail::where('user_id',auth()->user()->id)->exists();
         if($customer==null)
-            return view('website.frontend.customer_details.customerDetails_new');
+            return view('website.frontend.checkout.customerDetails_new');
         else
         {
             $cus=CustomerDetail::where('user_id',auth()->user()->id)->first();
+
             return redirect(route('checkout.show',$cus->id));
         }
 
@@ -30,11 +32,19 @@ class CheckoutController extends Controller
     /**
      * Show the form for creating a new resource.
      *
+     * @param $id
      * @return \Illuminate\Http\Response
      */
+
+    public function select($id){
+
+        $details=auth()->user()->customerDetails;
+        $currentAddress=CustomerDetail::find($id);
+        return view('website.frontend.checkout.select',['details'=>$details,'currentAddress'=>$currentAddress]);
+    }
     public function create()
     {
-        //
+        return view('website.frontend.checkout.customerDetails_new');
     }
 
     /**
@@ -45,7 +55,19 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-
+        $request->validate([
+            'fname'=>'required',
+            'lname'=>'required',
+            'company_name'=>'required',
+            'phone_number'=>'required|numeric',
+            'country'=>'required',
+            'address1'=>'required',
+            'address2'=>'required',
+            'town'=>'required',
+            'district'=>'required',
+            'pincode'=>'required',
+            'email'=>'required|email',
+        ]);
         CustomerDetail::create($request->all());
         return redirect(route('checkout.index'));
 
@@ -57,16 +79,34 @@ class CheckoutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request,$id)
     {
-        $customer=CustomerDetail::find($id);
-        //$cart=auth()->user()->carts->flatten()->pluck('product_id');
-        $carts=auth()->user()->carts;
 
-        $subTotal=0.0;
-        foreach ($carts as $cart)
+        if($id!=0)
         {
-            $subTotal+=$cart->total;
+            $customer=CustomerDetail::find($id);
+            //$cart=auth()->user()->carts->flatten()->pluck('product_id');
+            $carts=auth()->user()->carts;
+
+            $subTotal=0.0;
+            foreach ($carts as $cart)
+            {
+                $subTotal+=$cart->total;
+            }
+        }
+        else
+        {
+            $id=$request->address;
+
+            $customer=CustomerDetail::find($id);
+            //$cart=auth()->user()->carts->flatten()->pluck('product_id');
+            $carts=auth()->user()->carts;
+
+            $subTotal=0.0;
+            foreach ($carts as $cart)
+            {
+                $subTotal+=$cart->total;
+            }
         }
 
         return view('website.frontend.product.checkout',['customer'=>$customer,'carts'=>$carts,'subTotal'=>$subTotal]);
@@ -80,7 +120,9 @@ class CheckoutController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $customer=CustomerDetail::find($id);
+        return view('website.frontend.checkout.Edit',['customer'=>$customer]);
     }
 
     /**
@@ -92,7 +134,23 @@ class CheckoutController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $customerDetail=CustomerDetail::find($id);
+        $request->validate([
+            'fname'=>'required',
+            'lname'=>'required',
+            'company_name'=>'required',
+            'phone_number'=>'required|numeric',
+            'country'=>'required',
+            'address1'=>'required',
+            'address2'=>'required',
+            'town'=>'required',
+            'district'=>'required',
+            'pincode'=>'required',
+            'email'=>'required|email'
+        ]);
+        $customerDetail->update($request->all());
+
+        return redirect(route('checkout.index'))->with('message','Customer Details Updated Successfully');
     }
 
     /**

@@ -51,8 +51,9 @@
                                 </li>
                                 <li><a href="#">Pages</a>
                                     <ul class="submenu">
+                                        <li><a href="{{route('billingDetails.index')}}">Billing Address Details</a></li>
                                         <li><a href="{{route('orders.show',auth()->user()->id)}}">Your Orders</a></li>
-                                        <li><a href="checkout.html">Product Checkout</a></li>
+                                        <li><a href="{{route('checkout.index')}}">Product Checkout</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="/about">about</a></li>

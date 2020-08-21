@@ -29,6 +29,7 @@ Route::get('/about', function ()
 {
    return view('website.frontend.about');
 });
+Route::get('/cart/checkout/select/{id}','CheckoutController@select')->name('checkout.select');
 Route::resource('/home','FrontendController');
 Route::get('/cart','CartController@index')->name('cart.index');
 Route::put('/cart/{cart}','CartController@update')->name('cart.update');
@@ -38,7 +39,7 @@ Route::post('/cart','CartController@store')->name('cart.store');
 Route::resource('/orders','OrdersController');
 Route::resource('/list','ListController');
 Route::resource('/confirmation','ConfirmationController');
-Route::resource('/cart/checkout','checkoutController');
+Route::resource('/cart/checkout','CheckoutController');
 Route::resource('/dashboard/productcategory','ProductCategoryController');
 Route::resource('/dashboard/product','ProductController');
 Route::resource('/dashboard/productimage','ProductImageController');
