@@ -28,52 +28,14 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e53611b-7921-4a8f-a64d-9719870ec2b4" name="Default Changelist" comment="4th">
-      <change afterPath="$PROJECT_DIR$/public/images/1598008402.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598008430.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598008452.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598008473.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598008499.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598008516.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598008534.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598015883.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598015922.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598015938.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598015961.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598015979.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598015999.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598016408.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598016438.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598016462.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598016486.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598016527.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598016559.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598016580.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598016598.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598016996.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598017018.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598017035.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598017061.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598019636.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598019669.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1598021339.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/website/frontend/checkout/Edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/website/frontend/checkout/select.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/website/frontend/customer_details/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/website/frontend/customer_details/new.blade.php" afterDir="false" />
+    <list default="true" id="7e53611b-7921-4a8f-a64d-9719870ec2b4" name="Default Changelist" comment="Done">
+      <change afterPath="$PROJECT_DIR$/public/images/1598026091.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1598027861.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1598028919.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1598031371.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1598031980.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BillingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BillingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ProductCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ProductCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_13_210258_create_customer_details_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_13_210258_create_customer_details_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/frontend/customer_details/customerDetails_new.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/frontend/checkout/customerDetails_new.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/frontend/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/frontend/layouts/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/frontend/product/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/frontend/product/cart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/frontend/product/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/frontend/product/checkout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_17_175458_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_17_175458_create_orders_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,7 +227,7 @@
       <workItem from="1597997465705" duration="573000" />
       <workItem from="1598000223758" duration="844000" />
       <workItem from="1598002534981" duration="1441000" />
-      <workItem from="1598004516664" duration="8852000" />
+      <workItem from="1598004516664" duration="12986000" />
     </task>
     <task id="LOCAL-00001" summary="2nd comit">
       <created>1597757145357</created>
@@ -295,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597953277268</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Done">
+      <created>1598024275789</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1598024275789</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +299,8 @@
     <MESSAGE value="2nd comit" />
     <MESSAGE value="3rd commit" />
     <MESSAGE value="4th" />
-    <option name="LAST_COMMIT_MESSAGE" value="4th" />
+    <MESSAGE value="Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done" />
   </component>
   <component name="WindowStateProjectService">
     <state x="452" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597788738520">
@@ -353,10 +323,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1597758665865" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1597953286488">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1598024827541">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1597953286488" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1598024827541" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1597765867791">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
